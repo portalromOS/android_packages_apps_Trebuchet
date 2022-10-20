@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2022 The Portal Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.trust;
+package com.android.launcher3.portalrom.trust;
 
-import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.HIDDEN;
-import static com.android.launcher3.lineage.trust.db.TrustComponent.Kind.PROTECTED;
+import static com.android.launcher3.portalrom.trust.db.TrustComponent.Kind.HIDDEN;
+import static com.android.launcher3.portalrom.trust.db.TrustComponent.Kind.PROTECTED;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -40,9 +40,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.launcher3.LauncherAppState;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
-import com.android.launcher3.lineage.LineageUtils;
-import com.android.launcher3.lineage.trust.db.TrustComponent;
-import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
+import com.android.launcher3.portalrom.PortalRomUtils;
+import com.android.launcher3.portalrom.trust.db.TrustComponent;
+import com.android.launcher3.portalrom.trust.db.TrustDatabaseHelper;
 
 import java.util.List;
 
@@ -75,7 +75,7 @@ public class TrustAppsActivity extends Activity implements
         mLoadingView.setVisibility(View.VISIBLE);
         mProgressBar = findViewById(R.id.hidden_apps_progress_bar);
 
-        final boolean hasSecureKeyguard = LineageUtils.hasSecureKeyguard(this);
+        final boolean hasSecureKeyguard = PortalRomUtils.hasSecureKeyguard(this);
         mAdapter = new TrustAppsAdapter(this, hasSecureKeyguard);
         mDbHelper = TrustDatabaseHelper.getInstance(this);
 

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2019 The LineageOS Project
+ * Copyright (C) 2022 The Portal Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,13 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.android.launcher3.lineage.trust;
+package com.android.launcher3.portalrom.trust;
 
 import android.content.ComponentName;
 import android.content.Context;
 
 import com.android.launcher3.AppFilter;
-import com.android.launcher3.lineage.trust.db.TrustDatabaseHelper;
+import com.android.launcher3.portalrom.trust.db.TrustDatabaseHelper;
 
 @SuppressWarnings("unused")
 public class HiddenAppsFilter extends AppFilter {

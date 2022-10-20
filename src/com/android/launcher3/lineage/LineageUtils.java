@@ -1,4 +1,4 @@
-package com.android.launcher3.lineage;
+package com.android.launcher3.portalrom;
 
 import android.app.KeyguardManager;
 import android.content.Context;
@@ -13,7 +13,7 @@ import android.widget.Toast;
 
 import com.android.launcher3.R;
 
-public class LineageUtils {
+public class PortalRomUtils {
 
     public static boolean isPackageEnabled(Context context, String pkgName) {
         try {

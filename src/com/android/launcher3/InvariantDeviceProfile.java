@@ -63,7 +63,7 @@ import com.android.launcher3.util.Themes;
 import com.android.launcher3.util.WindowBounds;
 import com.android.quickstep.SystemUiProxy;
 
-import lineageos.providers.LineageSettings;
+import portalrom.providers.PortalRomSettings;
 
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
@@ -184,8 +184,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
 
     private final ArrayList<OnIDPChangeListener> mChangeListeners = new ArrayList<>();
 
-    private static final Uri ENABLE_TASKBAR_URI = LineageSettings.System.getUriFor(
-            LineageSettings.System.ENABLE_TASKBAR);
+    private static final Uri ENABLE_TASKBAR_URI = PortalRomSettings.System.getUriFor(
+            PortalRomSettings.System.ENABLE_TASKBAR);
 
     private final class SettingsContentObserver extends ContentObserver {
         SettingsContentObserver() {
@@ -197,8 +197,8 @@ public class InvariantDeviceProfile implements OnSharedPreferenceChangeListener 
             if (ENABLE_TASKBAR_URI.equals(uri)) {
                 // Create the illusion of this taking effect immediately
                 // Also needed because TaskbarManager inits before SystemUiProxy on start
-                boolean enabled = LineageSettings.System.getInt(mContext.getContentResolver(),
-                        LineageSettings.System.ENABLE_TASKBAR, 0) == 1;
+                boolean enabled = PortalRomSettings.System.getInt(mContext.getContentResolver(),
+                        PortalRomSettings.System.ENABLE_TASKBAR, 0) == 1;
                 SystemUiProxy.INSTANCE.get(mContext).setTaskbarEnabled(enabled);
 
                 // Restart launcher

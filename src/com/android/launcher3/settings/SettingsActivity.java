@@ -48,8 +48,8 @@ import com.android.launcher3.LauncherFiles;
 import com.android.launcher3.R;
 import com.android.launcher3.Utilities;
 import com.android.launcher3.config.FeatureFlags;
-import com.android.launcher3.lineage.LineageUtils;
-import com.android.launcher3.lineage.trust.TrustAppsActivity;
+import com.android.launcher3.portalrom.PortalRomUtils;
+import com.android.launcher3.portalrom.trust.TrustAppsActivity;
 import com.android.launcher3.model.WidgetsModel;
 import com.android.launcher3.states.RotationHelper;
 import com.android.launcher3.uioverrides.plugins.PluginManagerWrapper;
@@ -278,11 +278,11 @@ public class SettingsActivity extends FragmentActivity
                     return updateDeveloperOption();
 
                 case KEY_MINUS_ONE:
-                    return LineageUtils.isPackageEnabled(getActivity(), SEARCH_PACKAGE);
+                    return PortalRomUtils.isPackageEnabled(getActivity(), SEARCH_PACKAGE);
 
                 case KEY_TRUST_APPS:
                     preference.setOnPreferenceClickListener(p -> {
-                        LineageUtils.showLockScreen(getActivity(),
+                        PortalRomUtils.showLockScreen(getActivity(),
                                 getString(R.string.trust_apps_manager_name), () -> {
                             Intent intent = new Intent(getActivity(), TrustAppsActivity.class);
                             startActivity(intent);

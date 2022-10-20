@@ -43,7 +43,7 @@ import com.android.launcher3.util.DisplayController;
 import com.android.launcher3.util.DisplayController.Info;
 import com.android.launcher3.util.WindowBounds;
 
-import lineageos.providers.LineageSettings;
+import portalrom.providers.PortalRomSettings;
 
 import java.io.PrintWriter;
 
@@ -272,8 +272,8 @@ public class DeviceProfile {
         }
 
         hotseatQsbHeight = res.getDimensionPixelSize(R.dimen.qsb_widget_height);
-        boolean isTaskBarEnabled = LineageSettings.System.getInt(context.getContentResolver(),
-                LineageSettings.System.ENABLE_TASKBAR, isTablet ? 1 : 0) == 1;
+        boolean isTaskBarEnabled = PortalRomSettings.System.getInt(context.getContentResolver(),
+                PortalRomSettings.System.ENABLE_TASKBAR, isTablet ? 1 : 0) == 1;
         isTaskbarPresent = isTaskBarEnabled && ApiWrapper.TASKBAR_DRAWN_IN_PROCESS
                 && FeatureFlags.ENABLE_TASKBAR.get();
         if (isTaskbarPresent) {
